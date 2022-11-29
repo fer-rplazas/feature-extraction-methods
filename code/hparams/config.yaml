@@ -1,0 +1,10 @@
+arch: 
+  cnn1d: 
+    ks: 35
+    depth: 7
+    n_hidden: 35
+    compress: True
+
+  dotfft:
+    n_hidden: 25
+    depth: 8

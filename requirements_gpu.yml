@@ -1,0 +1,24 @@
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.10
+  - pytorch-cuda=11.7
+  - pytorch # use `pytorch-gpu` with conda and `pytorch` with mamba
+  - mne-base
+  - numpy
+  - pandas
+  - scikit-learn
+  - pytorch-lightning
+  - scipy
+  - numba
+  - seaborn
+  - matplotlib
+  - ipykernel
+  - pip
+  - ipympl
+  - hydra-core
+  - pip:
+    - colorednoise
