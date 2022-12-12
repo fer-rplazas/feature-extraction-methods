@@ -32,30 +32,15 @@ class ARModel(nn.Module):
             out (torch.Tensor): Logits. Shape (n_seq, n_batch)
         """
 
-        # l_ = []
-        # for x in torch.unbind(signals, 0):
-        #     l_.append(self.convs(x))
-        # conved = torch.stack(l_)  # (n_seq, n_batch, n_conv_feats)
-
         conved = torch.stack(
             [self.convs(x) for x in torch.unbind(signals, 0)]
         )  # (n_seq, n_batch, n_conv_feats)
-
-        # l_ = []
-        # for x in torch.unbind(feats, 0):
-        #     l_.append(self.feat_encoder(x))
-        # features_encoded = torch.stack(l_)  # (n_seq, n_batch, n_feats_encoded)
 
         features_encoded = torch.stack(
             [self.feat_encoder(x) for x in torch.unbind(feats, 0)]
         )  # (n_seq, n_batch, n_feats_encoded)
 
         feats_both = torch.cat((conved, features_encoded), -1)
-
-        # l_ = []
-        # for x in torch.unbind(feats_both, 0):
-        #     l_.append(self.combiner(x))
-        # feats_all = torch.stack(l_)  # (n_seq, n_batch, n_feats_combined)
 
         feats_all = torch.stack(
             [self.combiner(x) for x in torch.unbind(feats_both, 0)]
