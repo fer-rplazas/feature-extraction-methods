@@ -5,6 +5,7 @@ checkpoints/
 **/outputs/
 
 *.ipynb
-*.csv
+*.png
+*.h5
 
 pyrightconfig.json
