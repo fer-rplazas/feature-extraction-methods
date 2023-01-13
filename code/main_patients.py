@@ -269,7 +269,7 @@ def is_int(el: str):
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--name", type=str)
+    parser.add_argument("--name", type=str, required=False, default="patients")
     parser.add_argument("--n_jobs", required=False, default=4, type=int)
     parser.add_argument("--accelerator", required=False, default="gpu", type=str)
 
