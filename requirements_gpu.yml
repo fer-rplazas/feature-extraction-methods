@@ -8,7 +8,8 @@ dependencies:
   - pytorch-cuda=11.7
   - pytorch # use `pytorch-gpu` with conda and `pytorch` with mamba
   - mne-base
-  - numpy
+  - jupyterlab
+  - numpy=1.23
   - pandas
   - scikit-learn
   - pytorch-lightning
@@ -20,5 +21,7 @@ dependencies:
   - pip
   - ipympl
   - hydra-core
+  - h5py
+  - torchinfo
   - pip:
     - colorednoise
