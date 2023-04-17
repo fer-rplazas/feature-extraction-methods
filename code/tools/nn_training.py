@@ -18,7 +18,7 @@ def step(model, loss_module, batch, use_mixup: bool):
     if use_mixup:
         logits_mixup = logits.clone()
         y_mixup = y.clone()
-        if len(logits) % 2 != 0:
+        if len(logits_mixup) % 2 != 0:
             logits_mixup = logits_mixup[:-1]
             y_mixup = y_mixup[:-1]
 
