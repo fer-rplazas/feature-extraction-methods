@@ -29,8 +29,8 @@ class SVMClassifier:
         X_valid_sc = self.X_valid
 
         self.cls = SVC(class_weight="balanced")
-        params = {"C": [0.001, 0.005, 0.1, 0.5, 1, 10, 50, 100]}
-        self.cls = RandomizedSearchCV(self.cls, params, n_iter=8).fit(
+        params = {"C": [0.1, 0.5, 1, 10, 50]}
+        self.cls = RandomizedSearchCV(self.cls, params, n_iter=5, n_jobs=5).fit(
             X_train_sc, self.y_train
         )
 
